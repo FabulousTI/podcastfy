@@ -11,10 +11,12 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 RUN python3 -m pip install --upgrade pip
 
-COPY . /app
+COPY requirements.txt /app/requirements.txt
 WORKDIR /app
 
-RUN pip install --no-cache-dir fastapi uvicorn pyyaml
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /app
 
 ENV PYTHONUNBUFFERED=1
 
