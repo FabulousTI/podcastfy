@@ -14,8 +14,7 @@ RUN python3 -m pip install --upgrade pip
 COPY . /app
 WORKDIR /app
 
-RUN pip install --no-cache-dir fastapi uvicorn
-# Ajoute ici d'autres installs si besoin, ex: pip install -r requirements.txt
+RUN pip install --no-cache-dir fastapi uvicorn pyyaml
 
 ENV PYTHONUNBUFFERED=1
 
